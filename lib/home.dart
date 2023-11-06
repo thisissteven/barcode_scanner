@@ -15,7 +15,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<String> barcode = ["", "", "", ""];
+  List<String> barcode = [""];
 
   @override
   Widget build(BuildContext context) {

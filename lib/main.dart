@@ -1,5 +1,6 @@
 import 'package:barcode_scanner/home.dart';
 import 'package:barcode_scanner/qr_test.dart';
+import 'package:barcode_scanner/upload_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.montserrat().fontFamily,
       ),
-      home: const HomePage(),
+      home: ImagePickerWidget(),
     );
   }
 }
