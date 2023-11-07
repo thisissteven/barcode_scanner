@@ -1,8 +1,9 @@
 import 'package:barcode_scanner/home.dart';
-import 'package:barcode_scanner/qr_test.dart';
-import 'package:barcode_scanner/upload_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'input_provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.montserrat().fontFamily,
       ),
-      home: ImagePickerWidget(),
+      home: Scaffold(
+        body: SingleChildScrollView(
+          child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: ChangeNotifierProvider(
+                create: (context) => InputModel(),
+                child: const HomePage(
+                  withAddButton: true,
+                ),
+              )),
+        ),
+      ),
     );
   }
 }
